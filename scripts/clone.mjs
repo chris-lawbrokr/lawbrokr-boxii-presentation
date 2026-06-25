@@ -7,7 +7,7 @@
 import puppeteer from "puppeteer";
 import { writeFileSync, mkdirSync } from "node:fs";
 
-const TARGET = "https://www.mycroft.io/";
+const TARGET = "https://www.lawbrokr.com/";
 const OUT = new URL("../public/clone.html", import.meta.url);
 
 const browser = await puppeteer.launch({

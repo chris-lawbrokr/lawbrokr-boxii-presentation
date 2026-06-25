@@ -4,7 +4,7 @@ import Overlay from "./components/overlay";
 export default function Home() {
   return (
     <>
-      <ClonedSite src="/clone.html" title="Mycroft" />
+      <ClonedSite src="/clone.html" title="Lawbrokr" />
       <Overlay />
     </>
   );
