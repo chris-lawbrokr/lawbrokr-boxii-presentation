@@ -74,7 +74,7 @@ export const brand: Brand = {
       label: "Home",
       headline:
         "Stop losing leads your<br />marketing <span>already paid for.</span>",
-      subhead: "",
+      subhead: "Great marketing deserves better than a contact form.",
       cta: "Book a free demo",
       ctaHref: BOOKING_URL,
       chips: [

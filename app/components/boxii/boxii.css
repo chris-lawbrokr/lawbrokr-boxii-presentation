@@ -34,26 +34,26 @@
      components can derive muted shades with rgb(var(--boxii-ink) / 0.7). */
   --boxii-text: #1e1b4b;
   --boxii-ink: 30 27 75;
-  --boxii-highlight: #c79a3c; /* gold <span> emphasis in headlines */
+  --boxii-highlight: #f5b301; /* gold <span> emphasis in headlines */
 
   /* Surfaces */
   --boxii-stage-bg: #fff;
   --boxii-card-bg: radial-gradient(
-      48% 42% at 12% 8%,
-      rgba(124, 92, 200, 0.24) 0%,
-      transparent 55%
+      52% 46% at 12% 8%,
+      rgba(150, 116, 222, 0.42) 0%,
+      transparent 56%
     ),
     radial-gradient(
-      55% 55% at 92% 16%,
-      rgba(76, 42, 158, 0.28) 0%,
-      transparent 55%
+      58% 58% at 90% 14%,
+      rgba(255, 220, 110, 0.5) 0%,
+      transparent 58%
     ),
     radial-gradient(
-      65% 65% at 78% 112%,
-      rgba(76, 42, 158, 0.2) 0%,
-      transparent 60%
+      66% 66% at 80% 112%,
+      rgba(124, 92, 200, 0.36) 0%,
+      transparent 62%
     ),
-    linear-gradient(160deg, #ffffff 0%, #f1eefb 100%);
+    linear-gradient(160deg, #fffdf4 0%, #f0eafb 100%);
   --boxii-surface-dark: #fbfaff; /* marquee edge fades (solid color) */
   --boxii-marquee-bg: linear-gradient(
     110deg,
@@ -61,7 +61,7 @@
     #fbf9fe 55%,
     #f5f0fc 100%
   );
-  --boxii-panel-bg: rgba(250, 249, 255, 0.92); /* popup panel (with blur) */
+  --boxii-panel-bg: rgb(250, 249, 255); /* popup panel (fully opaque) */
   --boxii-panel-bg-solid: #faf9ff; /* popup fallback (no backdrop-filter) */
   --boxii-menu-bg: rgba(255, 255, 255, 0.97); /* mobile dropdown */
   --boxii-boot-bg: #ffffff; /* loading splash base */
@@ -255,7 +255,7 @@
   padding: 4.5rem 0 7rem;
   overflow: hidden;
   border-radius: var(--boxii-radius-lg);
-  box-shadow: 0 20px 50px -24px rgba(17, 17, 26, 0.45);
+  box-shadow: 0 12px 30px -22px rgba(17, 17, 26, 0.25);
   color: #111;
   font-weight: 700;
 }
@@ -431,6 +431,7 @@
 }
 .boxii .headline span {
   color: var(--boxii-highlight);
+  font-weight: 800;
 }
 .boxii .subhead-spacer {
   height: 0.5rem;
