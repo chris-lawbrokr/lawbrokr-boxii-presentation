@@ -158,13 +158,6 @@ function Hero({ host }: { host: Host }) {
             {t.cta} <Icon name="arrow-right" size="s4" />
           </button>
         )}
-        <button
-          type="button"
-          className="cta-text dismiss-text"
-          onClick={() => host.dismiss()}
-        >
-          No thanks, just browsing!
-        </button>
       </div>
     </>
   );
@@ -181,20 +174,9 @@ function DesktopBar() {
         <img src={testimonial.avatar} alt="" aria-hidden="true" />
         <div>
           <blockquote>{testimonial.quote}</blockquote>
-          {testimonial.href ? (
-            <a
-              className="readmore"
-              href={testimonial.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {testimonial.readMore} <Icon name="arrow-right" size="s4" />
-            </a>
-          ) : (
-            <button type="button" className="readmore">
-              {testimonial.readMore} <Icon name="arrow-right" size="s4" />
-            </button>
-          )}
+          {testimonial.author ? (
+            <cite className="cite">{testimonial.author}</cite>
+          ) : null}
         </div>
       </div>
       {infoCards.map((c) => (
@@ -210,9 +192,6 @@ function DesktopBar() {
           <span className="sub">{c.sub}</span>
         </a>
       ))}
-      <button type="button" className="ca-square glass glass-btn">
-        <Icon name="login" size="s5" /> Login
-      </button>
     </div>
   );
 }
@@ -404,6 +383,10 @@ export default function Card({ host }: { host: Host }) {
       </div>
 
       <div className="top-right">
+        <HeaderCta
+          cta={brand.ctaSecondary}
+          className="nav-btn glass glass-btn"
+        />
         <HeaderCta cta={brand.ctaPrimary} className="nav-btn nav-primary" />
         <button
           type="button"

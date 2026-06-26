@@ -52,36 +52,18 @@ function Boot({ loading }: { loading: boolean }) {
 }
 
 // ---- Floating reopen pill ----
-function FloatCloseX() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="12"
-      height="12"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
-    </svg>
-  );
-}
-
 function FloatActions({ host, fluid }: { host: Host; fluid: boolean }) {
   return (
     <>
-      <button
-        type="button"
-        className={`ia ia-wide ${fluid ? "fluid" : ""}`}
-        onClick={host.reopen}
+      <a
+        className={`ia ia-primary ${fluid ? "fluid" : ""}`}
+        href={brand.ctaPrimary.href}
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <span className="ia-label ia-label-lg">Book a demo</span>
-      </button>
+        <Icon name="calendar" size="s6" />
+        <span className="ia-label">Book a demo</span>
+      </a>
       <button
         type="button"
         className={`ia ${fluid ? "fluid" : ""}`}
@@ -95,24 +77,12 @@ function FloatActions({ host, fluid }: { host: Host; fluid: boolean }) {
 }
 
 function Floating({ host }: { host: Host }) {
-  const closeBtn = (
-    <button
-      type="button"
-      className="float-close"
-      aria-label="Close"
-      onClick={host.close}
-    >
-      <FloatCloseX />
-    </button>
-  );
   return (
     <>
       <div className="float mobile">
-        {closeBtn}
         <FloatActions host={host} fluid />
       </div>
       <div className="float desktop">
-        {closeBtn}
         <FloatActions host={host} fluid={false} />
       </div>
     </>

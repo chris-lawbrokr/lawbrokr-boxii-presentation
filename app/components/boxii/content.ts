@@ -45,7 +45,13 @@ export interface Brand {
   tabs: Record<TabId, TabContent>;
   siteNav: NavCol[];
   logos: Logo[];
-  testimonial: { quote: string; readMore: string; avatar: string; href?: string };
+  testimonial: {
+    quote: string;
+    author?: string;
+    readMore: string;
+    avatar: string;
+    href?: string;
+  };
   infoCards: { label: string; title: string; sub: string; href?: string }[];
   chipFoot: string;
 }
@@ -90,43 +96,46 @@ export const brand: Brand = {
         },
         {
           id: "setup",
-          icon: "🤝",
-          q: "Vendors & Partners",
-          title: "Live on your site in a day",
-          body: "Drop in one snippet, pick your intake flow, and start converting the same day — no developers and no website rebuild required.",
-          primary: "See the quickstart",
+          icon: "📈",
+          q: "Unlock your conversion rate",
+          title: "See what you're leaving on the table",
+          body: "Plug in your traffic and conversion numbers to see how many signed clients you're losing — and what Lawbrokr could recover.",
+          primary: "Open the ROI calculator",
+          href: "https://www.lawbrokr.com/#roi-calculator",
         },
       ],
     },
     comparing: {
-      label: "Conversion",
-      headline: "Every lead, qualified and routed.",
-      subhead: "Capture, score, and hand off new clients without the busywork.",
-      cta: "Unlock your conversion rate",
+      label: "App Comparisons",
+      headline: "See how Lawbrokr <span>stacks up.</span>",
+      subhead:
+        "Why firms pick Lawbrokr over chatbots, form builders, and agencies — and how it complements the tools you already run.",
+      cta: "See all comparisons",
+      ctaHref: "https://www.lawbrokr.com/app-comparisons",
       chips: [
         {
-          id: "qualify",
-          icon: "✅",
-          q: "How do you qualify leads?",
-          title: "Smart intake that asks the right questions",
-          body: "Branching intake flows ask only what matters for each matter type, score the lead, and flag the ones worth a callback — so your team spends time on clients, not tire-kickers.",
-          primary: "See a sample flow",
+          id: "vs-chatbot",
+          icon: "💬",
+          q: "Better than a chatbot?",
+          title: "Structured intake beats a chatbot",
+          body: "Chatbots like Intaker live in a single widget and chat their way through intake. Lawbrokr runs structured, multi-channel intake workflows that qualify and route every lead — built for legal pre-screening, not small talk.",
+          primary: "See the comparison",
         },
         {
-          id: "route",
-          icon: "🔀",
-          q: "Where do the leads go?",
-          title: "Routed to the right person, instantly",
-          body: "Qualified leads land in the right inbox, CRM, or practice group the moment they're submitted, with the full intake attached — no copy-paste and no leads sitting overnight.",
-          primary: "See integrations",
+          id: "vs-form",
+          icon: "📝",
+          q: "Why not just a form?",
+          title: "More than a form builder",
+          body: "Typeform and Google Forms collect answers and stop there. Lawbrokr adds qualification, routing, integrations, follow-up, and attribution — an end-to-end client-acquisition workflow, not just a data dump.",
+          primary: "See the comparison",
         },
         {
-          id: "followup",
-          icon: "⏱️",
-          q: "What about follow-up?",
-          title: "Automatic, immediate follow-up",
-          body: "The first response goes out in seconds, with reminders and nudges until the lead books — closing the speed-to-lead gap that quietly kills conversion.",
-          primary: "See follow-up",
+          id: "vs-build",
+          icon: "⚡",
+          q: "Build it ourselves?",
+          title: "Live in 48 hours, not months",
+          body: "Dev platforms and agencies mean weeks of custom work. Lawbrokr ships legal-specific templates that go live in 48 hours — and complements the systems you already run instead of replacing them.",
+          primary: "See the comparison",
         },
       ],
     },
@@ -220,10 +229,13 @@ export const brand: Brand = {
   ],
 
   testimonial: {
-    quote: "Discover how Lawbrokr can support you and your firm.",
+    quote:
+      "Lawbrokr opened the gates with detailed information, allowing much better client service and faster turnaround.",
+    author: "Stringam Law",
     readMore: "Book a call",
-    avatar: "/images/lawbrokr-face.webp",
-    href: BOOKING_URL,
+    avatar:
+      "https://cdn.prod.website-files.com/62b1794f8671cb0b4a0087d0/68fa4dd56616a15e86fedd61_image%2066.png",
+    href: "https://www.lawbrokr.com/",
   },
 
   infoCards: [
