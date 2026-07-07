@@ -15,6 +15,12 @@ import { useEffect } from "react";
  * in the JSX / using next/script) so it behaves identically to a normal embed:
  * a plain classic script appended to <body>, with `document.currentScript` set
  * during its synchronous execution so the site-id is read correctly.
+ *
+ * PostHog + rrweb session recording run as normal (the lawbrokr tenant carries a
+ * PostHog key). The recorder captures the overlay fine; the one thing it must
+ * NOT serialize is the giant same-origin `/clone.html` iframe — that's marked
+ * `ph-no-capture` in cloned-site.tsx so the recorder stores it as a placeholder
+ * box instead of walking its multi-MB DOM (which is what made the page lag).
  */
 
 const SRC = "https://cdn.lawbrokr.com/js/latest/boxii.min.js";
